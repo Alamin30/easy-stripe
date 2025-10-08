@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\File;
 class StripeInstaller
 {
     /**
+     * Publish all package resources and copy stubs
      * @throws Exception
      */
     public function publishAll(): void
@@ -15,17 +16,32 @@ class StripeInstaller
         $this->publishConfig();
         $this->publishMigrations();
         $this->publishViews();
-        $this->publishRoutes();
+        $this->copyFiles();
     }
 
-    public function publishConfig(): void
+    /**
+     * Publish config from package to main project
+     */
+    protected function publishConfig(): void
     {
-        \Artisan::call('vendor:publish', ['--tag' => 'stripe-config', '--force' => true]);
+        // The tag must exist in ServiceProvider publishes()
+        \Artisan::call('vendor:publish', [
+            '--provider' => 'Alamin\EasyStripe\EasyStripeServiceProvider',
+            '--tag' => 'easy-stripe-config',
+            '--force' => true,
+        ]);
     }
 
-    public function publishMigrations(): void
+    /**
+     * Publish migrations
+     */
+    protected function publishMigrations(): void
     {
-        \Artisan::call('vendor:publish', ['--tag' => 'stripe-migrations', '--force' => true]);
+        \Artisan::call('vendor:publish', [
+            '--provider' => 'Alamin\EasyStripe\EasyStripeServiceProvider',
+            '--tag' => 'easy-stripe-migrations',
+            '--force' => true,
+        ]);
     }
 
     public function publishViews(): void

@@ -18,8 +18,6 @@ class InstallCommand extends Command
         $this->info('Installing Stripe Integration...');
 
         $installer->publishAll();
-        $installer->copyFiles();
-        $installer->publishRoutes();
 
         $this->call('migrate');
         $this->info('Stripe Integration installed successfully!');
