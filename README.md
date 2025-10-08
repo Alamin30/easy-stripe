@@ -23,7 +23,7 @@ A no-code Stripe payment integration package for Laravel that provides a complet
 ### 1. Install via Composer
 
 ```bash
-composer require alamin/stripe-integration
+composer require alamin/easy-stripe
 ```
 
 ### 2. Run Installation Command
