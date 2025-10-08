@@ -59,7 +59,7 @@ STRIPE_WEBHOOK_SECRET=whsec_your_webhook_secret
 
 ### 2. Configuration File
 
-The package publishes a configuration file at `config/stripe-integration.php`:
+The package publishes a configuration file at `config/easy-stripe.php`:
 
 ```php
 return [
