@@ -1,0 +1,34 @@
+{
+    "name": "alamin/easy-stripe",
+    "version": "1.0.0",
+    "description": "No-code Stripe payment integration for Laravel",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alamin",
+            "email": "alaminbubt85@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "laravel/framework": "^10.0|^11.0|^12.0"
+    },
+    "suggest": {
+        "stripe/stripe-php": "Required for Stripe payment processing (^13.0 or ^18.0)"
+    },
+    "autoload": {
+        "psr-4": {
+            "Alamin\\EasyStripe\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Alamin\\EasyStripe\\EasyStripeServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

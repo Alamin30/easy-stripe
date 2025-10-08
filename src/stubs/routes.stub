@@ -1,0 +1,20 @@
+use DummyNamespace\DummyClass;
+
+$prefix = config('stripe-integration.routes.prefix', 'stripe');
+$middleware = config('stripe-integration.routes.middleware', ['web']);
+
+Route::prefix($prefix)->middleware($middleware)->group(function () {
+    // Payment routes
+    Route::get('/payment', [DummyClass::class, 'index'])->name('stripe.payment.index');
+    Route::post('/payment/intent', [DummyClass::class, 'createPaymentIntent'])->name('stripe.payment.intent');
+    Route::post('/payment/checkout', [DummyClass::class, 'createCheckoutSession'])->name('stripe.payment.checkout');
+    Route::get('/payment/success', [DummyClass::class, 'success'])->name('stripe.payment.success');
+    Route::get('/payment/cancel', [DummyClass::class, 'cancel'])->name('stripe.payment.cancel');
+
+    // Payment management
+    Route::get('/payments', [DummyClass::class, 'payments'])->name('stripe.payments.list');
+    Route::get('/payment/{payment}/invoice', [DummyClass::class, 'invoice'])->name('stripe.payment.invoice');
+
+    // Webhook (exclude from CSRF)
+    Route::post('/webhook', [DummyClass::class, 'webhook'])->name('stripe.webhook')->withoutMiddleware(['web']);
+});
