@@ -83,7 +83,7 @@ return [
 After installation, the following routes will be available:
 
 ```
-GET  /stripe                    - Payment form
+GET  /stripe                   - Payment form
 POST /stripe/payment           - Process payment
 GET  /stripe/success           - Payment success page
 GET  /stripe/cancel            - Payment cancelled page
