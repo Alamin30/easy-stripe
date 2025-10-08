@@ -1,5 +1,5 @@
 {
-    "name": "alamin/easy-stripe",
+    "name": "iamalamin/easy-stripe",
     "version": "1.0.0",
     "description": "No-code Stripe payment integration for Laravel",
     "type": "library",
