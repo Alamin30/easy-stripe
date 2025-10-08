@@ -29,7 +29,7 @@ composer require alamin/stripe-integration
 ### 2. Run Installation Command
 
 ```bash
-php artisan stripe-integration:install
+php artisan easy-stripe:install
 ```
 
 This command will:
