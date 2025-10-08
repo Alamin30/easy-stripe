@@ -20,5 +20,18 @@ class EasyStripeServiceProvider extends ServiceProvider
                 InstallCommand::class,
             ]);
         }
+
+        $this->publishes([
+            __DIR__.'/../config/easy-stripe.php' => config_path('easy-stripe.php'),
+        ], 'easy-stripe-config');
+
+        $this->publishes([
+            __DIR__.'/../database/migrations/' => database_path('migrations'),
+        ], 'easy-stripe-migrations');
+
+        $this->publishes([
+            __DIR__.'/../resources/views' => resource_path('views/vendor/easy-stripe'),
+        ], 'easy-stripe-views');
+
     }
 }
