@@ -41,7 +41,7 @@ php artisan migrate
 This command will:
 - Publish configuration files
 - Publish and run database migrations
-- Publish views to `resources/views/stripe-integration/`
+- Publish views to `resources/views/easy-stripe/`
 - Copy controller and model files to your app
 - Add routes to `routes/web.php`
 
@@ -101,7 +101,7 @@ GET  /stripe/payments          - List all payments
 
 #### Views
 
-All views are published to `resources/views/stripe-integration/`:
+All views are published to `resources/views/easy-stripe/`:
 
 ```
 resources/views/stripe-integration/
@@ -197,7 +197,7 @@ https://yourdomain.com/stripe/webhook
 The package includes Bootstrap 5 styling by default. You can customize the CSS in the layout file:
 
 ```blade
-{{-- resources/views/stripe-integration/layouts/app.blade.php --}}
+{{-- resources/views/easy-stripe/layouts/app.blade.php --}}
 <style>
     .payment-card {
         background: white;
@@ -228,7 +228,7 @@ CVC: Any 3 digits
 
 ### Common Issues
 
-1. **Views not found**: Ensure views are published to `resources/views/stripe-integration/`
+1. **Views not found**: Ensure views are published to `resources/views/easy-stripe/`
 2. **Routes not working**: Check that routes are added to `routes/web.php`
 3. **Stripe errors**: Verify your API keys in `.env` file
 4. **Database errors**: Run `php artisan migrate` to ensure tables exist
