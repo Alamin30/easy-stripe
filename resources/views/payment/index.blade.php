@@ -58,7 +58,7 @@
     <script src="https://js.stripe.com/v3/"></script>
     <script>
         // Handle form submission
-        const form = document.getElementById('payment-form');
+        const form = document.getElementById('stripe-payment-form');
         const submitButton = document.getElementById('submit-button');
         const buttonText = document.getElementById('button-text');
 
