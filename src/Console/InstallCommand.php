@@ -15,10 +15,8 @@ class InstallCommand extends Command
      */
     public function handle(StripeInstaller $installer): void
     {
-        $this->info('Installing Stripe Integration...');
-
         $installer->publishAll();
 
-        $this->info('Stripe Integration installed successfully!');
+        $this->info('Easy Stripe installation completed successfully!');
     }
 }
