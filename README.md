@@ -32,6 +32,12 @@ composer require alamin/stripe-integration
 php artisan easy-stripe:install
 ```
 
+### 3. Run Migrate Command
+
+```bash
+php artisan migrate
+```
+
 This command will:
 - Publish configuration files
 - Publish and run database migrations
