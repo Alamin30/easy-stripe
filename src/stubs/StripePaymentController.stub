@@ -15,7 +15,7 @@ class DummyClass extends Controller
 {
     public function __construct()
     {
-        Stripe::setApiKey(config('stripe-integration.stripe.secret'));
+        Stripe::setApiKey(config('easy-stripe.stripe.secret'));
     }
 
     public function index()
