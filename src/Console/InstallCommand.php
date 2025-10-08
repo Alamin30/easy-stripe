@@ -19,7 +19,6 @@ class InstallCommand extends Command
 
         $installer->publishAll();
 
-        $this->call('migrate');
         $this->info('Stripe Integration installed successfully!');
     }
 }
