@@ -124,7 +124,7 @@ class StripePaymentController extends Controller
 {
     public function index()
     {
-        return view('stripe-integration.stripe-payment.index');
+        return view('easy-stripe.stripe-payment.index');
     }
     
     public function processPayment(Request $request)
